@@ -1,5 +1,5 @@
 " Vundle plugins
-source ~/.dotfiles/vim/vundle
+source ~/.dotfiles/vim/vundle.vim
 
 " Syntax highlighting
 syntax on

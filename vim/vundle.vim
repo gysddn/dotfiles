@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " custom plugins
-Plugin 'Valloric/YouCompleteMe'		" auto-completion
+Plugin 'Valloric/YouCompleteMe'		    " auto-completion
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
