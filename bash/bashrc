@@ -47,8 +47,8 @@ else
 	PROMPT_SIGN="#"
 fi
 
-PROMPT_GIT='$(__git_ps1 "${BRED} %s${NORMAL}")'
-PS1="[${BGREEN}\u@\h ${BBLUE}\W${NORMAL}${PROMPT_GIT}]${PROMPT_SIGN} "
+PROMPT_GIT='$(__git_ps1 " %s")'
+PS1="[${BGREEN}\u@\h ${BBLUE}\W${NORMAL}${BRED}${PROMPT_GIT}${NORMAL}]${PROMPT_SIGN} "
 
 # Unset temporary variables
 unset PROMPT_SIGN
