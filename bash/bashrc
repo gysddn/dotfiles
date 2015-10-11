@@ -1,0 +1,56 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+DIR="$HOME/.dotfiles"
+
+# Color definitions
+BGREEN=$'\[\e[1;32m\]'
+GREEN=$'\[\e[0;32m\]'
+BRED=$'\[\e[1;31m\]'
+RED=$'\[\e[0;31m\]'
+BBLUE=$'\[\e[1;34m\]'
+BLUE=$'\[\e[0;34m\]'
+NORMAL=$'\[\e[0;0m\]'
+
+# Colored man pages
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+
+# Even more colors!
+alias ls='ls --color=auto'
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Bash completion
+[[ -r /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
+
+# Git related things
+. $DIR/bash/git-completion.bash
+. $DIR/bash/git-prompt.sh
+
+# Prompt
+if [[ $(id -u) -ne 0 ]] ; then
+	PROMPT_SIGN="$"
+else
+	PROMPT_SIGN="#"
+fi
+
+PROMPT_GIT='$(__git_ps1 "${BRED} %s${NORMAL}")'
+PS1="[${BGREEN}\u@\h ${BBLUE}\W${NORMAL}${PROMPT_GIT}]${PROMPT_SIGN} "
+
+# Unset temporary variables
+unset PROMPT_SIGN
+unset PROMPT_GIT
+unset DIR
