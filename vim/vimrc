@@ -3,7 +3,6 @@ source ~/.dotfiles/vim/vundle.vim
 
 " Visuals
 syntax on
-colorscheme peachpuff
 
 " Mouse
 set mouse=a
@@ -58,9 +57,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " Solarized Theme
-"let g:solarized_termcolors=256
-"set background=dark
-"colorscheme solarized
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+"colorscheme peachpuff
 
 " Ignore file types
 set wildignore+=*.pyc,*.swp,.git
