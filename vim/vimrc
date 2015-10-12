@@ -13,6 +13,7 @@ set number
 set wrap					" wrap text
 set linebreak				" don't wrap text in the middle of a word
 set smartindent				" use smart indent if there is no indent file
+set pastetoggle=<F12>		" toggle paste mode with F12
 
 " Tab settings
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
@@ -33,16 +34,29 @@ set foldmethod=indent
 set foldlevel=99
 
 " Shortcuts
-map <C-a> GVgg				" select all
-map <C-t> :tabnew <Enter>	" new tab
+nmap <C-a> GVgg				    " select all
+map <C-t> :tabnew <Enter>	    " new tab
+imap jj <Esc>                   " exit insert with double j
+
+" Easier split navigation
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 
 " YouCompleteMe configuration
 let g:ycm_autoclose_preview_window_after_insertion = 1
+nmap <C-b> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " EasyMotion configuration
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-s2)
+
+" Airline Status Bar
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Ignore file types
 set wildignore+=*.pyc,*.swp,.git
