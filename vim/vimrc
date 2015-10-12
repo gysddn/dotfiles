@@ -1,8 +1,9 @@
 " Vundle plugins
 source ~/.dotfiles/vim/vundle.vim
 
-" Syntax highlighting
+" Visuals
 syntax on
+colorscheme peachpuff
 
 " Mouse
 set mouse=a
@@ -15,7 +16,7 @@ set smartindent				" use smart indent if there is no indent file
 
 " Tab settings
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType html :setlocal sw=2 ts=2 sts=2
+autocmd FileType html :setlocal ts=2 sts=2 sw=2
 
 " Show trailing whitespace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
@@ -27,9 +28,21 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Folding
+set foldmethod=indent
+set foldlevel=99
+
 " Shortcuts
 map <C-a> GVgg				" select all
 map <C-t> :tabnew <Enter>	" new tab
 
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+" YouCompleteMe configuration
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" EasyMotion configuration
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+nmap s <Plug>(easymotion-s2)
+
+" Ignore file types
+set wildignore+=*.pyc,*.swp,.git
