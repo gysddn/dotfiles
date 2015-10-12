@@ -36,7 +36,6 @@ set foldlevel=99
 " Shortcuts
 nmap <C-a> GVgg				    " select all
 map <C-t> :tabnew <Enter>	    " new tab
-imap jj <Esc>                   " exit insert with double j
 
 " Easier split navigation
 nnoremap <C-j> <C-w><C-j>
@@ -57,6 +56,11 @@ nmap s <Plug>(easymotion-s2)
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" Solarized Theme
+"let g:solarized_termcolors=256
+"set background=dark
+"colorscheme solarized
 
 " Ignore file types
 set wildignore+=*.pyc,*.swp,.git
