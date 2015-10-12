@@ -5,6 +5,9 @@ CWD=$(pwd)
 # Bash Config
 ln -nfsv $CWD/bash/bashrc $HOME/.bashrc
 
+# Tmux Config
+ln -nfsv $CWD/tmux/tmux.conf $HOME/.tmux.conf
+
 # Vim Config
 ln -nfsv $CWD/vim/vimrc $HOME/.vimrc
 
