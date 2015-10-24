@@ -51,7 +51,11 @@ fi
 PROMPT_GIT='$(__git_ps1 " %s")'
 PS1="[${BGREEN}\u@\h ${BBLUE}\W${NORMAL}${BRED}${PROMPT_GIT}${NORMAL}]${PROMPT_SIGN} "
 
+# Include user specific stuff
+[[ -r $DIR/bash/bashrc_user ]] && . $DIR/bash/bashrc_user
+
 # Unset temporary variables
 unset PROMPT_SIGN
 unset PROMPT_GIT
 unset DIR
+
