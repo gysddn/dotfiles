@@ -51,13 +51,13 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-s2)
 
-" Airline Status Bar
+" Status Bar
 set laststatus=2
 set noshowmode
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" Solarized Theme
+" Theme
 "let g:solarized_termcolors=256
 "set background=dark
 "colorscheme solarized

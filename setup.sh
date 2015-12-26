@@ -1,20 +1,19 @@
 #!/bin/bash
 
-CWD=$(pwd)
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-# Bash Config
-ln -nfsv $CWD/bash/bashrc $HOME/.bashrc
+# Bash config
+ln -nfsv $script_dir/bash/bashrc $HOME/.bashrc
 
-# Tmux Config
-ln -nfsv $CWD/tmux/tmux.conf $HOME/.tmux.conf
+# Tmux config
+ln -nfsv $script_dir/tmux/tmux.conf $HOME/.tmux.conf
 
-# Vim Config
-ln -nfsv $CWD/vim/vimrc $HOME/.vimrc
+# Vim config
+ln -nfsv $script_dir/vim/vimrc $HOME/.vimrc
+ln -nfsv $script_dir/vim $HOME/.vim
 
-# Vim Setup (Vundle)
-ln -nfsv $CWD/vim $HOME/.vim
+# Init submodules and install vim plugins
+git submodule update --init --recursive
 vim +BundleInstall +qall
+python2 .dotfiles/vim/bundle/YouCompleteMe/install.py --clang-completer
 
-# Powerline Font
-wget https://github.com/powerline/fonts/raw/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf -O ~/font.ttf 2> /dev/null
-echo "install ~/font.ttf and set it as terminal font to enable powerline symbols in vim"
