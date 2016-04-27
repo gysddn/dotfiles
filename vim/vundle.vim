@@ -9,11 +9,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " custom plugins
-Plugin 'Valloric/YouCompleteMe'		        " auto-completion
 Plugin 'easymotion/vim-easymotion'          " quick navigation
 Plugin 'kien/ctrlp.vim'                     " fuzzy file finder
 Plugin 'bling/vim-airline'                  " statusbar
-Plugin 'altercation/vim-colors-solarized'   " solarized theme
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

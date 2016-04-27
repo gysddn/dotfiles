@@ -1,19 +1,20 @@
 #!/bin/bash
 
-script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+# Init submodules
+git submodule update --init --recursive
 
 # Bash config
-ln -nfsv $script_dir/bash/bashrc $HOME/.bashrc
+ln -nfsv bash/bashrc $HOME/.bashrc
 
 # Tmux config
-ln -nfsv $script_dir/tmux/tmux.conf $HOME/.tmux.conf
+ln -nfsv tmux/tmux.conf $HOME/.tmux.conf
 
 # Vim config
-ln -nfsv $script_dir/vim/vimrc $HOME/.vimrc
-ln -nfsv $script_dir/vim $HOME/.vim
+ln -nfsv vim/vimrc $HOME/.vimrc
+ln -nfsv vim $HOME/.vim
 
-# Init submodules and install vim plugins
-git submodule update --init --recursive
+# Install vim plugins
 vim +BundleInstall +qall
-python2 .dotfiles/vim/bundle/YouCompleteMe/install.py --clang-completer
 
