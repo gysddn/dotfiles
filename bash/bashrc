@@ -38,6 +38,8 @@ alias egrep='egrep --color=auto'
 [[ -r /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
 
 # Git related things
+GIT_PS1_SHOWDIRTYSTATE="true"
+GIT_PS1_SHOWUPSTREAM="verbose"
 . $DIR/bash/git-completion.bash
 . $DIR/bash/git-prompt.sh
 
