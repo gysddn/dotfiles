@@ -1,67 +1,196 @@
-" Vundle plugins
-source ~/.dotfiles/vim/vundle.vim
+" Little required stuff -------------------- {{{
+set encoding=UTF-8 		    " set the encoding
+set nocompatible		   	" be Improved, required
+filetype off			    " required
+" }}}
 
-" Visuals
-syntax on
+" Plugins -------------------- {{{
+"rtp means (r)un (t)ime (p)ath
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/plugged')
 
-" Mouse
-set mouse=a
+Plugin 'VundleVim/Vundle.vim'
 
-" Text settings
-set number
-set wrap					" wrap text
-set linebreak				" don't wrap text in the middle of a word
-set smartindent				" use smart indent if there is no indent file
-set pastetoggle=<F12>		" toggle paste mode with F12
+" Addons
+Plugin 'scrooloose/nerdtree'
+Plugin 'yuttie/comfortable-motion.vim' " Smooth scrolling
 
-" Tab settings
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType html :setlocal ts=2 sts=2 sw=2
+" Themes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'icymind/NeoSolarized'
+Plugin 'morhetz/gruvbox' "The best...
+Plugin 'vim-python/python-syntax'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'romainl/flattened'
 
-" Show trailing whitespace and spaces before a tab:
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
-:match ExtraWhitespace /\s\+$\| \+\ze\t/
+" Jedi-vim
+Plugin 'davidhalter/jedi-vim'
 
-" Searching
-set incsearch
-set ignorecase
-set smartcase
+" Searching (<C-P>)
+Plugin 'ctrlpvim/ctrlp.vim'
 
-" Folding
-set foldmethod=indent
-set foldlevel=99
+" Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-" Shortcuts
-nmap <C-a> GVgg				    " select all
-map <C-t> :tabnew <Enter>	    " new tab
+" Git Integration
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
-" Easier split navigation
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
+" Commenting lines
+Plugin 'vim-scripts/tComment'
 
-" YouCompleteMe configuration
-let g:ycm_autoclose_preview_window_after_insertion = 1
-nmap <C-b> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Arduino syntax
+Plugin 'sudar/vim-arduino-syntax'
 
-" EasyMotion configuration
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-nmap s <Plug>(easymotion-s2)
+" Test Plugin
+Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
 
-" Status Bar
-set laststatus=2
-set noshowmode
-"let g:airline_powerline_fonts = 1
+call vundle#end()
+filetype plugin indent on 	" required
+" }}}
+
+" Mappings -------------------- {{{
+" Leader Mappings
+map <Space> <leader>
+map <leader>w   :w<CR>
+map <leader>q   :q<CR>
+map <leader>!   :qa<CR>
+map <leader>gs  :Gstatus<CR>
+map <leader>= 	 <C-W>=
+
+" NERDTree Mappings
+map <leader>nt   :NERDTreeToggle<CR>
+map <leader>nf   :NERDTreeFocus<CR>
+map <leader>nc   :NERDTreeCWD<CR>
+
+" Edit .vimrc quickly in a split
+map <leader>ev   :sp ~/.vimrc<CR>
+" Source .vimrc 
+map <leader>sv   :source ~/.vimrc<CR>
+
+" Clear Search Highlight
+map <leader>csh  :nohlsearch<CR>
+" Redraw the screen
+map <leader>rd	 :redraw!<CR>
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Easy tab navigations
+nnoremap <C-y>   :tabprevious<CR>
+nnoremap <C-o>   :tabnext<CR>
+" }}}
+
+" Abbreviations -------------------- {{{
+iabbrev body <body></body>
+iabbrev html <html></html>
+iabbrev asim not awesome
+iabbrev environmnent environment
+" }}}
+
+" Settings [let and set] -------------------- {{{
+let g:auto_save = 1 				" Enable auto save on Vim startup
+let g:auto_save_in_insert_mode = 0	" Do not save in insert mode
+
+" Reduce gitgutter updatetime
+set updatetime=100
+
+" Airline tab thing
 let g:airline#extensions#tabline#enabled = 1
 
-" Theme
-"let g:solarized_termcolors=256
-"set background=dark
-"colorscheme solarized
-colorscheme peachpuff
+syntax on
 
-" Ignore file types
-set wildignore+=*.pyc,*.swp,.git
+set autoread								" Auto reload changed files
+set nowrap 									" Don't wrap the long lines
+set shiftwidth=4 tabstop=4 				 	" Two spaces for tabs
+set noswapfile								" Turn off swap files
+set hlsearch								" Highlight the search results
+set showcmd									" Show commands on status bar
+" }}}
+
+" Persistent undo -------------------- {{{
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+" }}}
+
+" Interface -------------------- {{{
+set number relativenumber 				" Enable line numbers
+set scrolloff=10						" Leave 10 lines of buffer when scrolling
+set sidescrolloff=10					" Leave 10 characters of horizontal buffer when scrolling
+" }}}
+
+" Look & Feel ;) -------------------- {{{
+set background=dark
+colorscheme gruvbox
+
+" Airline theme
+let g:airline_theme='badwolf'
+
+"set guifont=DroidSansMono\ Nerd\ Font\ 11
+
+" Showcase comments in italics
+highlight Comment cterm=italic gui=italic
+
+" Make the python code look pretty
+let python_highlight_all=1
+
+" }}}
+
+" Vimscript file settings -------------------- {{{
+augroup filetype_vim
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+" Push yourself to learn -------------------- {{{
+" Disable h,l and use w,e,b,g_,0,$,^ instead
+nnoremap h <nop>
+nnoremap l <nop>
+vnoremap h <nop>
+vnoremap l <nop>
+" }}}
+
+" Little Ideas -------------------- {{{
+" Make a command that changes colorcheme with arrow keys
+" Dictionary Plugin
+" }}}
+
+" Testing -------------------- {{{
+"let g:jedi#auto_vim_configuration=0
+"let g:jedi#popup_on_dot=1
+"let g:jedi#popup_select_first=0
+fun! ProfileStart(...)
+	if a:0 && a:1 != 1
+		let g:profile_file = a:1
+	else
+		let g:profile_file = '/tmp/vim'.getpid().'.'.reltimestr(reltime())[-4:].'profile.txt'
+		if a:0 < 2 || a:2
+			@* = g:profile_file
+		endif
+	endif
+	echom "Profiling into" g:profile_file
+	exec 'profile start '.g:profile_file
+	profile! file **
+	profile  func *
+endfun
+if len(get(g:, 'profile', ''))
+	call ProfileStart(g:profile)
+endif
+if 0
+	call ProfileStart(1, 0)
+endif
+" }}}
+
+" Example Group -------------------- {{{
+" You know what, use built-in command to
+" \ make groups you dummy!
+" }}}
+

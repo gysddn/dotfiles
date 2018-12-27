@@ -61,3 +61,24 @@ unset PROMPT_SIGN
 unset PROMPT_GIT
 unset DIR
 
+# set true colors for neovim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+# set default editor as vim
+VISUAL=vim;
+export VISUAL 
+EDITOR=vim;
+export EDITOR
+
+# personal aliases
+alias ttr='ranger ~/Lectures'
+
+#----------------------------------------------------------------------
+# Push yourself to learn
+#----------------------------------------------------------------------
+alias clear="echo 'Use <C-L> instead.'"
+alias exit="echo 'Use <C-D> instead.'"
+
+export ARDUINO_DIR="/home/monepicor/Programs/arduino-1.8.8"
+export ARDMK_DIR="/home/monepicor/.arduino_mk"
+export AVR_TOOLS_DIR="$ARDUINO_DIR/hardware/tools/avr"
