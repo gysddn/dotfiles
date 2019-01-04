@@ -82,3 +82,9 @@ alias exit="echo 'Use <C-D> instead.'"
 export ARDUINO_DIR="/home/monepicor/Programs/arduino-1.8.8"
 export ARDMK_DIR="/home/monepicor/.arduino_mk"
 export AVR_TOOLS_DIR="$ARDUINO_DIR/hardware/tools/avr"
+
+# Solve the emacs X problem on Elementary
+alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
+
+# Launch fish-shell
+#fish

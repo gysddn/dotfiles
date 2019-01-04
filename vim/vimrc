@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Addons
 Plugin 'scrooloose/nerdtree'
 Plugin 'yuttie/comfortable-motion.vim' " Smooth scrolling
+Plugin 'tpope/vim-surround' " Surroundings
 
 " Themes
 Plugin 'altercation/vim-colors-solarized'
@@ -43,6 +44,25 @@ Plugin 'vim-scripts/tComment'
 
 " Arduino syntax
 Plugin 'sudar/vim-arduino-syntax'
+
+" Note plugin
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
+
+" Show code errors
+Plugin 'vim-syntastic/syntastic'
+
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+
+" Auto-closing
+Plugin 'cohama/lexima.vim'
+
+" HTML
+Plugin 'mattn/emmet-vim'
+
+" Markdown preview
+
 
 " Test Plugin
 Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
@@ -87,8 +107,6 @@ nnoremap <C-o>   :tabnext<CR>
 " }}}
 
 " Abbreviations -------------------- {{{
-iabbrev body <body></body>
-iabbrev html <html></html>
 iabbrev asim not awesome
 iabbrev environmnent environment
 " }}}
@@ -158,6 +176,17 @@ vnoremap h <nop>
 vnoremap l <nop>
 " }}}
 
+" Syntastic Settings -------------------- {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+" }}}
+
 " Little Ideas -------------------- {{{
 " Make a command that changes colorcheme with arrow keys
 " Dictionary Plugin
@@ -167,6 +196,7 @@ vnoremap l <nop>
 "let g:jedi#auto_vim_configuration=0
 "let g:jedi#popup_on_dot=1
 "let g:jedi#popup_select_first=0
+let g:gitgutter_enabled = 1
 fun! ProfileStart(...)
 	if a:0 && a:1 != 1
 		let g:profile_file = a:1
