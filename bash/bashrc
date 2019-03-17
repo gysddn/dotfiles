@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Paths
+export PATH=~/kde/src/kdesrc-build:$PATH
+
 DIR="$HOME/.dotfiles"
 
 # Color definitions
@@ -65,13 +68,15 @@ unset DIR
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # set default editor as vim
-VISUAL=vim;
+VISUAL=nvim;
 export VISUAL 
-EDITOR=vim;
+EDITOR=nvim;
 export EDITOR
 
 # personal aliases
 alias ttr='ranger ~/Lectures'
+alias vim='nvim'
+alias vi='nvim'
 
 #----------------------------------------------------------------------
 # Push yourself to learn
@@ -85,6 +90,12 @@ export AVR_TOOLS_DIR="$ARDUINO_DIR/hardware/tools/avr"
 
 # Solve the emacs X problem on Elementary
 alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
+
+# Take quick notes
+alias note='nvim ~/.notes/stuff'
+
+# define my main goal
+export mymaingoal="Adding NFS to dolphin"
 
 # Launch fish-shell
 #fish
