@@ -2,6 +2,7 @@
 set encoding=UTF-8 		    " set the encoding
 set nocompatible		   	" be Improved, required
 filetype off			    " required
+filetype plugin on
 " }}}
 
 " Plugins -------------------- {{{
@@ -70,6 +71,9 @@ Plugin 'vim-scripts/pydoc.vim'
 " LaTeX Plugin (exciting stuff)
 Plugin 'lervag/vimtex'
 
+" Markdown style stuff
+Plugin 'shime/vim-livedown'
+
 
 " Test Plugin
 "Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
@@ -137,12 +141,18 @@ set noswapfile								" Turn off swap files
 set hlsearch								" Highlight the search results
 set showcmd									" Show commands on status bar
 
+let g:tex_flavor = 'latex'
+
 " Python interpreters
 let g:python_host_prog  = '/usr/bin/python2.7'	  " Python 2
 let g:python3_host_prog = '/usr/bin/python3.7'  " Python 3
 " to disable
 "let g:loaded_python_provider = 1
 "let g:loaded_python3_provider = 1
+
+
+" Latex neovim support
+let g:vimtex_compiler_progname = 'nvr'
 
 " }}}
 

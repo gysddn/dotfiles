@@ -3,6 +3,7 @@
 
 # Paths
 export PATH=~/kde/src/kdesrc-build:$PATH
+export PATH=~/.local/bin:$PATH
 
 DIR="$HOME/.dotfiles"
 
@@ -78,6 +79,9 @@ alias ttr='ranger ~/Lectures'
 alias vim='nvim'
 alias vi='nvim'
 
+# markdown to html5
+alias panmd='pandoc -t html5 -f markdown+smart --toc --toc-depth 3 --template GitHub.html5 --quiet'
+
 #----------------------------------------------------------------------
 # Push yourself to learn
 #----------------------------------------------------------------------
@@ -87,6 +91,8 @@ alias exit="echo 'Use <C-D> instead.'"
 export ARDUINO_DIR="/home/monepicor/Programs/arduino-1.8.8"
 export ARDMK_DIR="/home/monepicor/.arduino_mk"
 export AVR_TOOLS_DIR="$ARDUINO_DIR/hardware/tools/avr"
+
+export LFS=/mnt/lfs
 
 # Solve the emacs X problem on Elementary
 alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
@@ -99,3 +105,10 @@ export mymaingoal="Adding NFS to dolphin"
 
 # Launch fish-shell
 #fish
+
+# Learning (as usual)
+echo '<C-u> to clear up to the beginning.'
+echo '<C-w> to delete just a word.'
+echo '<Alt-Shift-#> to make a comment.'
+
+
