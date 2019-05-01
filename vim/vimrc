@@ -190,6 +190,7 @@ let python_highlight_all=1
 augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
+	autocmd FileType asm set filetype=nasm
 augroup END
 " }}}
 
@@ -197,8 +198,6 @@ augroup END
 " Disable h,l and use w,e,b,g_,0,$,^ instead
 nnoremap h <nop>
 nnoremap l <nop>
-vnoremap h <nop>
-vnoremap l <nop>
 " }}}
 
 " Syntastic Settings -------------------- {{{
@@ -208,7 +207,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 " }}}
 
