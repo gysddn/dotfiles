@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # Paths
-export PATH=~/kde/src/kdesrc-build:$PATH
+#export PATH=~/kde/src/kdesrc-build:$PATH
 export PATH=~/.local/bin:$PATH
 
 DIR="$HOME/.dotfiles"
@@ -73,15 +73,15 @@ unset DIR
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # set default editor as vim
-VISUAL=nvim;
+VISUAL=vim;
 export VISUAL 
-EDITOR=nvim;
+EDITOR=vim;
 export EDITOR
 
 # personal aliases
 alias ttr='ranger ~/Lectures'
-alias vim='nvim'
-alias vi='nvim'
+alias vim='vim'
+alias vi='vim'
 alias prm='. ~/Projects/Shell/prm/prm.sh'
 
 # markdown to html5
@@ -116,4 +116,17 @@ printf  '<C-u> to clear up to the beginning.
 <C-w> to delete just a word.
 <Alt-Shift-#> to make a comment.' | catsay
 
+
+function mv2down {
+  mv ~/İndirilenler/* ~/Downloads/
+}
+
+# Lua package.path variable
+LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua"
+export LUA_PATH
+
+function gunc 
+{
+    cp -R /home/milas/repos/mps /mnt/milis2/ortam2/usr/milis/mps
+}
 
