@@ -16,7 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'yuttie/comfortable-motion.vim' " Smooth scrolling
 Plugin 'tpope/vim-surround' " Surroundings
-Plugin 'Valloric/YouCompleteMe' 
+" Plugin 'Valloric/YouCompleteMe' 
 
 " Themes
 Plugin 'altercation/vim-colors-solarized'
@@ -143,6 +143,7 @@ set shiftwidth=4 tabstop=4 				 	" Two spaces for tabs
 set noswapfile								" Turn off swap files
 set hlsearch								" Highlight the search results
 set showcmd									" Show commands on status bar
+set hidden									" Let buffers to be hidden without saving
 
 let g:tex_flavor = 'latex'
 
@@ -175,6 +176,7 @@ set sidescrolloff=10					" Leave 10 characters of horizontal buffer when scrolli
 " Look & Feel ;) -------------------- {{{
 set background=dark
 colorscheme gruvbox
+set termguicolors
 
 " Airline theme
 let g:airline_theme='badwolf'

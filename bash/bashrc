@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # Paths
-export PATH=~/kde/src/kdesrc-build:$PATH
+#export PATH=~/kde/src/kdesrc-build:$PATH
 export PATH=~/.local/bin:$PATH
 
 DIR="$HOME/.dotfiles"
@@ -81,7 +81,6 @@ export TERMINAL
 
 # personal aliases
 alias ttr='ranger ~/Lectures'
-alias prm='. ~/Projects/Shell/prm/prm.sh'
 
 # use nvim
 alias vim='nvim'
@@ -121,3 +120,15 @@ printf  '<C-u> to clear up to the beginning.
 
 
 export LFS=/mnt/lfs
+function mv2down {
+  mv ~/İndirilenler/* ~/Downloads/
+}
+
+# Lua package.path variable
+LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua"
+export LUA_PATH
+
+function gunc 
+{
+    cp -R /home/milas/repos/mps /mnt/milis2/ortam2/usr/milis/mps
+}
