@@ -132,6 +132,9 @@ set updatetime=100
 " Airline tab thing
 let g:airline#extensions#tabline#enabled = 1
 
+" Real colors
+set termguicolors
+
 syntax on
 
 set autoread								" Auto reload changed files

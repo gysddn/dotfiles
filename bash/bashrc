@@ -30,8 +30,7 @@ man() {
 }
 
 # Even more colors!
-alias ls='ls --color=auto'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --block-size=M'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -73,16 +72,20 @@ unset DIR
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # set default editor as vim
-VISUAL=nvim;
+VISUAL=vim;
 export VISUAL 
-EDITOR=nvim;
+EDITOR=vim;
 export EDITOR
+TERMINAl=gnome-terminal;
+export TERMINAL
 
 # personal aliases
 alias ttr='ranger ~/Lectures'
+alias prm='. ~/Projects/Shell/prm/prm.sh'
+
+# use nvim
 alias vim='nvim'
 alias vi='nvim'
-alias prm='. ~/Projects/Shell/prm/prm.sh'
 
 # markdown to html5
 alias panmd='pandoc -t html5 -f markdown+smart --toc --toc-depth 3 --template GitHub.html5 --quiet'
@@ -114,6 +117,7 @@ export mymaingoal="Pass the classes. Please."
 # Learning (as usual)
 printf  '<C-u> to clear up to the beginning.
 <C-w> to delete just a word.
-<Alt-Shift-#> to make a comment.' | catsay
+<Alt-Shift-#> to make a comment.' | catsay | lolcat
 
 
+export LFS=/mnt/lfs
