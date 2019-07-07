@@ -1,6 +1,6 @@
 set $mod Mod1
 
-font pango:DejaVu Sans Mono 8
+font pango:Source Code Pro 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -18,6 +18,12 @@ bindsym $mod+d exec dmenu_run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+
+# volume controls
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # change focus
 bindsym $mod+h focus left
@@ -132,9 +138,24 @@ set $urgent-bg-color 		#E53935
 set $text-color 			#F3F4F5
 set $inactive-text-color 	#676E7D
 
+# bar {
+# 	position top
+# 	status_command i3blocks
+# 	colors {
+# 		separator #757575
+# 		focused_workspace $bg-color $bg-color $text-color
+# 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+# 		urgent_workspace $urgent-bg-color $urgent-bg-color $text-color
+# 	}
+# }
+
 bar {
+	font pango:Source Code Pro 8
 	position top
-	status_command i3blocks
+	status_command /home/monepicor/.local/share/bumblebee-status/bumblebee-status \
+		-m title amixer spotify cpu memory battery time \
+		-p time.format="%H:%M"   \
+		-t wal-powerline
 	colors {
 		separator #757575
 		focused_workspace $bg-color $bg-color $text-color
@@ -147,7 +168,7 @@ bar {
 exec --no-startup-id nm-applet
 exec --no-startup-id compton
 # no more bullshit!
-#exec --no-startup-id ~/.config/polybar/launch.sh
+#exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 gaps inner 5
 gaps outer 0

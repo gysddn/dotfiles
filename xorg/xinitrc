@@ -35,3 +35,6 @@ fi
 xrdb ~/.Xresources
 wal -i '/home/monepicor/Images/Wal/dxWWznt.jpg' 
 exec i3
+
+# enable i3 debugging
+exec i3 --shmlog-size=26214400
