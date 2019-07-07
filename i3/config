@@ -153,8 +153,8 @@ bar {
 	font pango:Source Code Pro 8
 	position top
 	status_command /home/monepicor/.local/share/bumblebee-status/bumblebee-status \
-		-m title amixer spotify cpu memory battery time \
-		-p time.format="%H:%M"   \
+		-m title todo amixer spotify pacman sensors cpu memory battery time \
+		-p time.format="%H:%M" todo.file=$HOME/.note   \
 		-t wal-powerline
 	colors {
 		separator #757575
