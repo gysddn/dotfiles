@@ -133,6 +133,7 @@ set $text-color 			#F3F4F5
 set $inactive-text-color 	#676E7D
 
 bar {
+	position top
 	status_command i3blocks
 	colors {
 		separator #757575
@@ -143,8 +144,13 @@ bar {
 }
 
 # networkmanager applet
-exec --no-startup-id nmapplet
+exec --no-startup-id nm-applet
+exec --no-startup-id compton
+# no more bullshit!
+#exec --no-startup-id ~/.config/polybar/launch.sh
 
 gaps inner 5
 gaps outer 0
-sh ~/.fehbg
+
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
