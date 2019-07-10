@@ -3,6 +3,8 @@ set encoding=UTF-8 		    " set the encoding
 set nocompatible		   	" be Improved, required
 filetype off			    " required
 filetype plugin on
+" python3 imp module issue
+silent! py3 pass
 " }}}
 
 " Plugins -------------------- {{{
@@ -74,6 +76,9 @@ Plugin 'lervag/vimtex'
 " Markdown style stuff
 Plugin 'shime/vim-livedown'
 
+" Auto-completion
+Plugin 'ycm-core/YouCompleteMe'
+
 
 " Test Plugin
 "Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
@@ -133,7 +138,7 @@ set updatetime=100
 let g:airline#extensions#tabline#enabled = 1
 
 " Real colors
-set termguicolors
+" set termguicolors
 
 syntax on
 
@@ -176,10 +181,10 @@ set sidescrolloff=10					" Leave 10 characters of horizontal buffer when scrolli
 " Look & Feel ;) -------------------- {{{
 set background=dark
 colorscheme gruvbox
-set termguicolors
+" set termguicolors
 
 " Airline theme
-let g:airline_theme='badwolf'
+let g:airline_theme='base16_3024'
 
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 
