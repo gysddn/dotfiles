@@ -33,7 +33,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 xrdb ~/.Xresources
-wal -i '/home/monepicor/Images/Wal/dxWWznt.jpg' 
+wal -i '/home/monepicor/Images/Wal/FESiVv4.jpg' 
 exec i3
 
 # enable i3 debugging

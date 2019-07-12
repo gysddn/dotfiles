@@ -26,6 +26,7 @@ Plugin 'vim-python/python-syntax'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'romainl/flattened'
+Plugin 'BarretRen/vim-colorscheme'
 
 " Jedi-vim (not that useful actually)
 "Plugin 'davidhalter/jedi-vim'
@@ -139,7 +140,7 @@ syntax on
 
 set autoread								" Auto reload changed files
 set nowrap 									" Don't wrap the long lines
-set shiftwidth=4 tabstop=4 				 	" Two spaces for tabs
+set expandtab shiftwidth=4 tabstop=4 				 	" Two spaces for tabs
 set noswapfile								" Turn off swap files
 set hlsearch								" Highlight the search results
 set showcmd									" Show commands on status bar
@@ -179,7 +180,7 @@ colorscheme gruvbox
 set termguicolors
 
 " Airline theme
-let g:airline_theme='badwolf'
+let g:airline_theme='base16_3024'
 
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 
