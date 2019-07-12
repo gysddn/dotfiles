@@ -83,8 +83,12 @@ export TERMINAL
 alias ttr='ranger ~/Lectures'
 
 # use nvim
-alias vim='nvim'
-alias vi='nvim'
+if hash nvim 2>/dev/null; then
+	alias vim='nvim'
+	alias vi='nvim'
+else
+	alias vi='vim'
+fi
 
 # markdown to html5
 alias panmd='pandoc -t html5 -f markdown+smart --toc --toc-depth 3 --template GitHub.html5 --quiet'
