@@ -1,5 +1,7 @@
 set $mod Mod1
 
+set $locker "i3lock -i ~/Images/Wal/purple.png"
+
 font pango:Source Code Pro 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -66,7 +68,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # lock the screen
-bindsym Control+mod1+l exec i3lock -i ~/Pictures/lock.png
+bindsym Control+mod1+l exec $locker
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -137,35 +139,39 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 # Colors ^_^
-set $bg-color 				#000000
-set $inactive-bg-color 		#000000
-set $urgent-bg-color 		#E53935
-set $text-color 			#F3F4F5
-set $inactive-text-color 	#676E7D
+#set $bg-color 				#000000
+#set $inactive-bg-color 		#000000
+#set $urgent-bg-color 		#E53935
+#set $text-color 			#F3F4F5
+#set $inactive-text-color 	#676E7D
 
-# bar {
-# 	position top
-# 	status_command i3blocks
-# 	colors {
-# 		separator #757575
-# 		focused_workspace $bg-color $bg-color $text-color
-# 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-# 		urgent_workspace $urgent-bg-color $urgent-bg-color $text-color
-# 	}
-# }
+set_from_resource $bg           i3wm.color0 #ff0000
+set_from_resource $bg-alt       i3wm.color14 #ff0000
+set_from_resource $fg           i3wm.color15 #ff0000
+set_from_resource $fg-alt       i3wm.color2 #ff0000
+set_from_resource $hl           i3wm.color13 #ff0000
+
+# class                 border      backgr. text indicator      child_border
+client.focused          $fg-alt     $bg     $hl  $fg-alt        $hl
+client.focused_inactive $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.unfocused        $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.urgent           $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+
+client.background       $bg
 
 bar {
 	font pango:Source Code Pro 8
 	position top
 	status_command /home/monepicor/.local/share/bumblebee-status/bumblebee-status \
-		-m title todo amixer spotify pacman sensors cpu memory battery time \
+		-m title todo amixer spotify pacman sensors cpu publicip memory battery time \
 		-p time.format="%H:%M" todo.file=$HOME/.note   \
 		-t wal-powerline
 	colors {
 		separator #757575
-		focused_workspace $bg-color $bg-color $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace $urgent-bg-color $urgent-bg-color $text-color
+		inactive_workspace $bg $bg $hl
+		focused_workspace $bg-alt $bg-alt $fg-alt
+		urgent_workspace $hl $bg-alt $hl
 	}
 }
 
@@ -173,7 +179,7 @@ bar {
 exec --no-startup-id nm-applet
 exec --no-startup-id compton
 exec --no-startup-id compton
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
+exec --no-startup-id xautolock -time 120 -locker $locker
 # no more bullshit!
 #exec --no-startup-id $HOME/.config/polybar/launch.sh
 

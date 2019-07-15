@@ -118,9 +118,19 @@ export mymaingoal="Pass the classes. Please."
 #fish
 
 # Learning (as usual)
-printf  '<C-u> to clear up to the beginning.
-<C-w> to delete just a word.
-<Alt-Shift-#> to make a comment.' | catsay | lolcat
+printf  '^B move cursor back
+^F move cursor forward
+^P previous command
+^N next command
+^A beginning of line
+^E end of line
+^K erase from beginning
+^Y yank erased text
+
+-------------------
+
+man -k search
+man section page' | catsay | lolcat
 
 
 export LFS=/mnt/lfs
@@ -135,4 +145,11 @@ export LUA_PATH
 function gunc 
 {
     cp -R /home/milas/repos/mps /mnt/milis2/ortam2/usr/milis/mps
+}
+function fancy() {
+  while true
+  do 
+    figlet $1 | lolcat
+    sleep 1
+  done
 }
