@@ -114,7 +114,7 @@ alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
 alias note='nvim ~/.notes/stuff'
 
 # define my main goal
-export mymaingoal="It's time for us to go back in try-hard mode."
+export mymaingoal="Make that study program. It will changes things."
 
 # Launch fish-shell
 #fish

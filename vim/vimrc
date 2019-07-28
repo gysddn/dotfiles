@@ -148,7 +148,7 @@ set updatetime=100
 let g:airline#extensions#tabline#enabled = 1
 
 " Real colors
-" set termguicolors
+set termguicolors
 
 syntax on
 
@@ -190,11 +190,11 @@ set sidescrolloff=10					" Leave 10 characters of horizontal buffer when scrolli
 
 " Look & Feel ;) -------------------- {{{
 set background=dark
-colorscheme gruvbox
+colorscheme Base2Tone_EveningDark
 " set termguicolors
 
 " Airline theme
-let g:airline_theme='base16_3024'
+let g:airline_theme='behelit'
 
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 
