@@ -80,6 +80,8 @@ Plugin 'shime/vim-livedown'
 " Auto-completion
 Plugin 'ycm-core/YouCompleteMe'
 
+" Trailing Whitespaces
+Plugin 'ntpeters/vim-better-whitespace'
 
 " Test Plugin
 "Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
@@ -112,6 +114,9 @@ map <leader>csh  :nohlsearch<CR>
 " Redraw the screen
 map <leader>rd	 :redraw!<CR>
 
+" Exit neovim terminal easily
+tnoremap <Esc> <C-\><C-n>
+
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -136,7 +141,7 @@ let g:auto_save_in_insert_mode = 0	" Do not save in insert mode
 set updatetime=100
 
 " Airline tab thing
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 " Real colors
 " set termguicolors
@@ -202,6 +207,7 @@ augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType asm set filetype=nasm
+  autocmd BufRead,BufNewFile talimat setfiletype dosini
 augroup END
 " }}}
 
@@ -220,6 +226,7 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
 " }}}
 
 " Little Ideas -------------------- {{{

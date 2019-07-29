@@ -153,3 +153,6 @@ function fancy() {
     sleep 1
   done
 }
+function startos {
+  qemu-system-x86_64 --enable-kvm -m 1024 -hdb $1 $2
+}
