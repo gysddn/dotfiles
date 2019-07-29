@@ -160,20 +160,20 @@ client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 
 client.background       $bg
 
-bar {
-	font pango:Source Code Pro 8
-	position top
-	status_command /home/monepicor/.local/share/bumblebee-status/bumblebee-status \
-		-m title todo amixer spotify pacman sensors cpu publicip memory battery time \
-		-p time.format="%H:%M" todo.file=$HOME/.note   \
-		-t wal-powerline
-	colors {
-		separator #757575
-		inactive_workspace $bg $bg $hl
-		focused_workspace $bg-alt $bg-alt $fg-alt
-		urgent_workspace $hl $bg-alt $hl
-	}
-}
+#bar {
+#	font pango:Source Code Pro 8
+#	position top
+#	status_command /home/monepicor/.local/share/bumblebee-status/bumblebee-status \
+#		-m title todo amixer spotify pacman sensors cpu publicip memory battery time \
+#		-p time.format="%H:%M" todo.file=$HOME/.note   \
+#		-t wal-powerline
+#	colors {
+#		separator #757575
+#		inactive_workspace $bg $bg $hl
+#		focused_workspace $bg-alt $bg-alt $fg-alt
+#		urgent_workspace $hl $bg-alt $hl
+#	}
+#}
 
 # networkmanager applet
 exec --no-startup-id nm-applet
@@ -181,7 +181,7 @@ exec --no-startup-id compton
 exec --no-startup-id compton
 exec --no-startup-id xautolock -time 120 -locker $locker
 # no more bullshit!
-#exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 gaps inner 5
 gaps outer 0

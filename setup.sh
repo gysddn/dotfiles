@@ -9,12 +9,11 @@ git submodule update --init --recursive
 # Bash config
 ln -sfv $script_dir/bash/bashrc $HOME/.bashrc
 
-# Tmux config
-ln -sfv $script_dir/tmux/tmux.conf $HOME/.tmux.conf
-
 # Vim config
 ln -sfv $script_dir/vim/vimrc $HOME/.vimrc
-ln -sfv $script_dir/vim $HOME/.vim
+if [ ! -d $HOME/.vim ]; then
+  ln -sfv $script_dir/vim $HOME/.vim
+fi
 
 # Xorg config(s)
 ln -sfv $script_dir/xorg/xinitrc $HOME/.xinitrc
@@ -25,7 +24,10 @@ ln -sfv $script_dir/xorg/Xresources $HOME/.Xresources
 if [ ! -d $HOME/.config/i3 ]; then
 	mkdir -p $HOME/.config/i3
 fi
-ln -sfv $script_dir/i3/config $HOME/.config/i3/config
+ln -sfv $script_dir/i3 $HOME/.config/i3
+
+# Polybar config
+ln -sfv $script_dir/polybar $HOME/.config/polybar
 
 # Install vim plugins
 vim +BundleInstall +qall
