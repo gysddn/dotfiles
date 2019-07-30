@@ -74,9 +74,9 @@ unset DIR
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # set default editor as vim
-VISUAL=vim;
-export VISUAL 
-EDITOR=vim;
+VISUAL=nvim;
+export VISUAL
+EDITOR=nvim;
 export EDITOR
 TERMINAl=gnome-terminal;
 export TERMINAL
@@ -144,17 +144,31 @@ function mv2down {
 LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua"
 export LUA_PATH
 
-function gunc 
+function gunc
 {
     cp -R /home/milas/repos/mps /mnt/milis2/ortam2/usr/milis/mps
 }
+
 function fancy() {
   while true
-  do 
+  do
     figlet $1 | lolcat
     sleep 1
   done
 }
+
 function startos {
   qemu-system-x86_64 --enable-kvm -m 1024 -hdb $1 $2
+}
+
+function push {
+  git add .
+  git commit
+  git push
+}
+
+function pushdot {
+  git -C ~/.dotfiles add .
+  git -C ~/.dotfiles commit
+  git push
 }

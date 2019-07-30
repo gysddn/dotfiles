@@ -151,7 +151,7 @@ let g:auto_save_in_insert_mode = 0	" Do not save in insert mode
 set updatetime=100
 
 " Airline tab thing
-let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " Real colors
 set termguicolors
