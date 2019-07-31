@@ -96,6 +96,8 @@ Plugin 'atelierbram/Base2Tone-vim'
 " Test Plugin
 "Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
 
+" Vim-devicons (Always should come last)
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 filetype plugin indent on 	" required
 " }}}
