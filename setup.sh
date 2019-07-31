@@ -27,7 +27,9 @@ fi
 ln -sfv $script_dir/i3 $HOME/.config/i3
 
 # Polybar config
-ln -sfv $script_dir/polybar $HOME/.config/polybar
+if [ ! -d $HOME/.config/polybar ]; then
+  ln -sfv $script_dir/polybar $HOME/.config/polybar
+fi
 
 # Install vim plugins
 vim +BundleInstall +qall
