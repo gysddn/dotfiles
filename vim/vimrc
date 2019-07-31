@@ -36,6 +36,9 @@ Plugin 'BarretRen/vim-colorscheme'
 " Searching (<C-P>)
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" Follow the standars boy !
+Plugin 'editorconfig/editorconfig-vim'
+
 " Airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -92,6 +95,12 @@ Plugin 'trevordmiller/nova-vim'
 
 " Base2Tone color scheme
 Plugin 'atelierbram/Base2Tone-vim'
+
+" Badwolf color scheme (finally I'm installing this)
+Plugin 'sjl/badwolf'
+
+" Indent guides, pretty neat -\_(^_^)_/-
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Test Plugin
 "Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
@@ -198,11 +207,12 @@ set sidescrolloff=10					" Leave 10 characters of horizontal buffer when scrolli
 
 " Look & Feel ;) -------------------- {{{
 set background=dark
-colorscheme Base2Tone_EveningDark
+" badwolf is really good
+colorscheme badwolf
 " set termguicolors
 
 " Airline theme
-let g:airline_theme='behelit'
+let g:airline_theme='base16_atelierdune'
 
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 
