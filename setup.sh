@@ -1,35 +1,32 @@
 #!/bin/bash
-
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 cd $script_dir
+folder_name=$(date +"%Y-%m-%d-%T")
+
+create_link() {
+  # $1 is the path under this directory
+  # $2 is the path to link
+if [ -d $2 ] || [ -f $2 ]; then
+  mkdir -p "$HOME/.backup/$folder_name"
+  mv -v $2 "$HOME/.backup/$folder_name/$(basename $2)"
+  rm -rfv $2
+fi
+  ln -sfv $1 $2
+}
 
 # Init submodules
 git submodule update --init --recursive
 
 # Bash config
-ln -sfv $script_dir/bash/bashrc $HOME/.bashrc
+create_link $script_dir/bash/bashrc $HOME/.bashrc
 
 # Vim config
-ln -sfv $script_dir/vim/vimrc $HOME/.vimrc
-if [ ! -d $HOME/.vim ]; then
-  ln -sfv $script_dir/vim $HOME/.vim
-fi
+create_link $script_dir/vim/vimrc $HOME/.vimrc
+create_link $script_dir/vim $HOME/.vim
+create_link $script_dir/nvim $HOME/.config/nvim
 
-# Xorg config(s)
-ln -sfv $script_dir/xorg/xinitrc $HOME/.xinitrc
-ln -sfv $script_dir/xorg/Xmodmap $HOME/.Xmodmap
-ln -sfv $script_dir/xorg/Xresources $HOME/.Xresources
-
-# i3 config
-if [ ! -d $HOME/.config/i3 ]; then
-	mkdir -p $HOME/.config/i3
-fi
-ln -sfv $script_dir/i3 $HOME/.config/i3
-
-# Polybar config
-if [ ! -d $HOME/.config/polybar ]; then
-  ln -sfv $script_dir/polybar $HOME/.config/polybar
-fi
+# Xmodmap config
+create_link $script_dir/xorg/Xmodmap $HOME/.Xmodmap
 
 # Install vim plugins
 vim +BundleInstall +qall
