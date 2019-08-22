@@ -184,3 +184,7 @@ function pushdot {
   git -C ~/.dotfiles commit
   git push
 }
+
+function youtube-pl {
+  youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" $1
+}
