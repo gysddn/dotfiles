@@ -106,8 +106,8 @@ Plug 'tpope/vim-eunuch'
 " Vim Clap
 Plug 'liuchengxu/vim-clap'
 
-" Smooth scrolling
-Plug 'terryma/vim-smooth-scroll'
+" Tables, yaaay
+Plug 'dhruvasagar/vim-table-mode'
 
 " Power of VSCode... I guess
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -157,6 +157,20 @@ nnoremap <C-H> <C-W><C-H>
 " Easy tab navigations
 nnoremap <C-y>   :tabprevious<CR>
 nnoremap <C-o>   :tabnext<CR>
+
+" Coc.nvim mappings (don't like messing here tho)
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+" <CR> to confirm completion, use: >
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 " }}}
 
 " Abbreviations -------------------- {{{
@@ -191,6 +205,10 @@ set ignorecase              " Ignore case when command completion
 set wildignorecase
 
 let g:tex_flavor = 'latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=0    " doesn't work properly at the time
+let g:tex_conceal='abdmg'
 
 " Python interpreters
 let g:python_host_prog  = '/usr/bin/python2.7'	  " Python 2
