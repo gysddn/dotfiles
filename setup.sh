@@ -15,7 +15,7 @@ fi
 }
 
 # Init submodules
-git submodule update --init --recursive
+# git submodule update --init --recursive
 
 # Bash config
 create_link $script_dir/bash/bashrc $HOME/.bashrc

@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Turn on extended globbing
+shopt -s extglob
+
 # Paths
 #export PATH=~/kde/src/kdesrc-build:$PATH
 export PATH=~/.local/bin:$PATH
@@ -121,19 +124,11 @@ export mymaingoal="Make that study program. It will changes things."
 #fish
 
 # Learning (as usual)
-printf  '^B move cursor back
-^F move cursor forward
-^P previous command
-^N next command
-^A beginning of line
-^E end of line
-^K erase from beginning
-^Y yank erased text
-
--------------------
-
-man -k search
-man section page' | catsay | lolcat
+printf  'J delete new line
+U undo changes on the line
+ZZ write and exit
+:<C-D> show all possible commands
+Use counts!' | catsay | lolcat
 
 
 export LFS=/mnt/lfs
@@ -177,3 +172,4 @@ function pushdot {
 function youtube-pl {
   youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" $1
 }
+mnx='qemu-system-x86_64 -localtime -net user -net nic -m 256 -cdrom minix.iso -hda minix.img -boot d'

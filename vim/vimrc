@@ -7,107 +7,117 @@ filetype plugin on
 silent! py3 pass
 " }}}
 
-" Plugins -------------------- {{{
+" Plugs -------------------- {{{
 "rtp means (r)un (t)ime (p)ath
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/plugged')
-
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Addons
-Plugin 'scrooloose/nerdtree'
-Plugin 'yuttie/comfortable-motion.vim' " Smooth scrolling
-Plugin 'tpope/vim-surround' " Surroundings
-" Plugin 'Valloric/YouCompleteMe' 
+Plug 'scrooloose/nerdtree'
+Plug 'yuttie/comfortable-motion.vim' " Smooth scrolling
+Plug 'tpope/vim-surround' " Surroundings
 
 " Themes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'icymind/NeoSolarized'
-Plugin 'morhetz/gruvbox' "The best...
-Plugin 'vim-python/python-syntax'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'romainl/flattened'
-Plugin 'BarretRen/vim-colorscheme'
+Plug 'altercation/vim-colors-solarized'
+Plug 'icymind/NeoSolarized'
+Plug 'morhetz/gruvbox' "The best...
+Plug 'vim-python/python-syntax'
+Plug 'junegunn/seoul256.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'romainl/flattened'
+Plug 'BarretRen/vim-colorscheme'
+Plug 'Rigellute/rigel'
 
 " Jedi-vim (not that useful actually)
-"Plugin 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 
 " Searching (<C-P>)
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Follow the standars boy !
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Git Integration
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Commenting lines
-Plugin 'vim-scripts/tComment'
+Plug 'vim-scripts/tComment'
 
 " Arduino syntax
-Plugin 'sudar/vim-arduino-syntax'
+Plug 'sudar/vim-arduino-syntax'
 
 " Note plugin
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 
 " Show code errors
-Plugin 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 " Multiple cursors
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " Auto-closing
-Plugin 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim'
 
 " HTML
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 " Documentation
-Plugin 'vim-utils/vim-man'
-Plugin 'gauteh/vim-cppman' " cpp
-Plugin 'vim-scripts/pydoc.vim'
+Plug 'vim-utils/vim-man'
+Plug 'gauteh/vim-cppman' " cpp
+Plug 'vim-scripts/pydoc.vim'
 
-" LaTeX Plugin (exciting stuff)
-Plugin 'lervag/vimtex'
+" LaTeX Plug (exciting stuff)
+Plug 'lervag/vimtex'
 
 " Markdown style stuff
-Plugin 'shime/vim-livedown'
-
-" Auto-completion
-Plugin 'ycm-core/YouCompleteMe'
+Plug 'shime/vim-livedown'
 
 " Trailing Whitespaces
-Plugin 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Distraction-free writing
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 
 " Project Nova (colorscheme)
-Plugin 'sheerun/vim-polyglot'
-Plugin 'trevordmiller/nova-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'trevordmiller/nova-vim'
 
 " Base2Tone color scheme
-Plugin 'atelierbram/Base2Tone-vim'
+Plug 'atelierbram/Base2Tone-vim'
 
 " Badwolf color scheme (finally I'm installing this)
-Plugin 'sjl/badwolf'
+Plug 'sjl/badwolf'
 
 " Indent guides, pretty neat -\_(^_^)_/-
-Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'thaerkh/vim-indentguides'
 
-" Test Plugin
-"Plugin 'file:///home/monepicor/Projects/VimScript/color-changer'
+" Syntax
+Plug 'MTDL9/vim-log-highlighting'
+
+" Vim Sugar
+Plug 'tpope/vim-eunuch'
+
+" Vim Clap
+Plug 'liuchengxu/vim-clap'
+
+" Tables, yaaay
+Plug 'dhruvasagar/vim-table-mode'
+
+" Power of VSCode... I guess
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Test Plug
+"Plug 'file:///home/monepicor/Projects/VimScript/color-changer'
 
 " Vim-devicons (Always should come last)
-Plugin 'ryanoasis/vim-devicons'
-call vundle#end()
+Plug 'ryanoasis/vim-devicons'
+call plug#end()
 filetype plugin indent on 	" required
 " }}}
 
@@ -127,7 +137,7 @@ map <leader>nc   :NERDTreeCWD<CR>
 
 " Edit .vimrc quickly in a split
 map <leader>ev   :sp ~/.vimrc<CR>
-" Source .vimrc 
+" Source .vimrc
 map <leader>sv   :source ~/.vimrc<CR>
 
 " Clear Search Highlight
@@ -147,6 +157,20 @@ nnoremap <C-H> <C-W><C-H>
 " Easy tab navigations
 nnoremap <C-y>   :tabprevious<CR>
 nnoremap <C-o>   :tabnext<CR>
+
+" Coc.nvim mappings (don't like messing here tho)
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+" <CR> to confirm completion, use: >
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 " }}}
 
 " Abbreviations -------------------- {{{
@@ -176,8 +200,15 @@ set noswapfile								" Turn off swap files
 set hlsearch								" Highlight the search results
 set showcmd									" Show commands on status bar
 set hidden									" Let buffers to be hidden without saving
+set wildmode=longest:full
+set ignorecase              " Ignore case when command completion
+set wildignorecase
 
 let g:tex_flavor = 'latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=0    " doesn't work properly at the time
+let g:tex_conceal='abdmg'
 
 " Python interpreters
 let g:python_host_prog  = '/usr/bin/python2.7'	  " Python 2
@@ -230,6 +261,7 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 	autocmd FileType asm set filetype=nasm
   autocmd BufRead,BufNewFile talimat setfiletype dosini
+  autocmd BufRead,BufNewFile *.log setfiletype log
 augroup END
 " }}}
 
@@ -253,7 +285,7 @@ let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
 
 " Little Ideas -------------------- {{{
 " Make a command that changes colorcheme with arrow keys
-" Dictionary Plugin
+" Dictionary Plug
 " }}}
 
 " Testing -------------------- {{{
