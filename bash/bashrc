@@ -5,7 +5,7 @@
 #export PATH=~/kde/src/kdesrc-build:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:~/.gem/ruby/2.6.0/bin
-
+export PATH=$PATH:/usr/local/bin
 
 DIR="$HOME/.dotfiles"
 
@@ -39,7 +39,7 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
+alias mps='sudo mps'
 # Bash completion
 [[ -r /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
 
