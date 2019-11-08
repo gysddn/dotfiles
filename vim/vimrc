@@ -12,6 +12,9 @@ silent! py3 pass
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
+" Fancy startup
+Plug 'mhinz/vim-startify'
+
 " Addons
 Plug 'scrooloose/nerdtree'
 Plug 'yuttie/comfortable-motion.vim' " Smooth scrolling
@@ -93,6 +96,9 @@ Plug 'atelierbram/Base2Tone-vim'
 
 " Badwolf color scheme (finally I'm installing this)
 Plug 'sjl/badwolf'
+
+" Another nice color scheme
+Plug 'mhartington/oceanic-next'
 
 " Indent guides, pretty neat -\_(^_^)_/-
 Plug 'thaerkh/vim-indentguides'

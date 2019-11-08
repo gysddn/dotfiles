@@ -3,6 +3,7 @@
 
 # Turn on extended globbing
 shopt -s extglob
+# set -o vi
 
 # Paths
 #export PATH=~/kde/src/kdesrc-build:$PATH
@@ -102,7 +103,7 @@ alias panmd='pandoc -t html5 -f markdown+smart --toc --toc-depth 3 --template Gi
 #----------------------------------------------------------------------
 # Push yourself to learn
 #----------------------------------------------------------------------
-alias clear="echo 'Use <C-L> instead.'"
+# alias clear="echo 'Use <C-L> instead.'"
 alias exit="echo 'Use <C-D> instead.'"
 
 export ARDUINO_DIR="/home/monepicor/Programs/arduino-1.8.8"
@@ -118,7 +119,7 @@ alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
 alias note='nvim ~/.notes/stuff'
 
 # define my main goal
-export mymaingoal="Make that study program. It will changes things."
+export mymaingoal="Make that study program. It will change things."
 
 # Launch fish-shell
 #fish
