@@ -20,6 +20,9 @@ fi
 # Bash config
 create_link $script_dir/bash/bashrc $HOME/.bashrc
 
+# Emacs config
+create_link $script_dir/emacs.d $HOME/.emacs.d
+
 # Vim config
 create_link $script_dir/vim/vimrc $HOME/.vimrc
 create_link $script_dir/vim $HOME/.vim
