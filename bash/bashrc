@@ -10,6 +10,8 @@ shopt -s extglob
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/home/monepicor/.gem/ruby/2.6.0/bin
+export AUTOCONF=autoconf2.64
 
 DIR="$HOME/.dotfiles"
 
