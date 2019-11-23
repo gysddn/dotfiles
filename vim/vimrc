@@ -130,11 +130,16 @@ filetype plugin indent on 	" required
 " Mappings -------------------- {{{
 " Leader Mappings
 map <Space> <leader>
-map <leader>w   :w<CR>
+" map <leader>w   :w<CR>
 map <leader>q   :q<CR>
 map <leader>!   :qa<CR>
 map <leader>gs  :Gstatus<CR>
 map <leader>= 	 <C-W>=
+
+" Clap mapping, Pretti neat
+map <leader>wb 	:Clap buffers<CR>
+map <leader>wl 	:Clap blines<CR>
+map <leader>wc 	:Clap colors<CR>
 
 " NERDTree Mappings
 map <leader>nt   :NERDTreeToggle<CR>
@@ -428,6 +433,15 @@ nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>
 nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
+
+" Sweet sweet extensions
+let g:coc_global_extensions = [
+  \ 'coc-python',
+  \ 'coc-java',
+  \ 'coc-xml',
+  \ 'coc-markdownlint',
+  \ 'coc-texlab',
+  \ ]
 " }}}
 
 " Example Group -------------------- {{{

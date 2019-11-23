@@ -12,6 +12,7 @@ export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/monepicor/.gem/ruby/2.6.0/bin
 export AUTOCONF=autoconf2.64
+export JDK_HOME=/usr/lib/jvm/java-13-openjdk
 
 DIR="$HOME/.dotfiles"
 
