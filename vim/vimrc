@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround' " Surroundings
 Plug 'altercation/vim-colors-solarized'
 Plug 'icymind/NeoSolarized'
 Plug 'morhetz/gruvbox' "The best...
+Plug 'sainnhe/gruvbox-material' "The best with material touch...
 Plug 'vim-python/python-syntax'
 Plug 'junegunn/seoul256.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -183,7 +184,7 @@ let g:auto_save_in_insert_mode = 0	" Do not save in insert mode
 set updatetime=100
 
 " Airline tab thing
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 " Real colors
 set termguicolors
@@ -251,7 +252,7 @@ colorscheme gruvbox
 " set termguicolors
 
 " Airline theme
-let g:airline_theme='gruvbox'
+let g:airline_theme='Base2Tone_CaveDark'
 
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 
@@ -292,7 +293,6 @@ let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
 " }}}
 
 " Little Ideas -------------------- {{{
-" Make a command that changes colorcheme with arrow keys
 " Dictionary Plug
 " }}}
 
@@ -441,7 +441,39 @@ let g:coc_global_extensions = [
   \ 'coc-xml',
   \ 'coc-markdownlint',
   \ 'coc-texlab',
+  \ 'coc-json',
   \ ]
+" }}}
+
+" Airline -------------------- {{{
+
+" Define the dictionary
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
+
+
+
+" }}}
+
+" NERDTree -------------------- {{{
+
+" after a re-source, fix syntax matching issues (damn brackets)
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif
+
 " }}}
 
 " Example Group -------------------- {{{
