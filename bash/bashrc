@@ -12,7 +12,7 @@ export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/monepicor/.gem/ruby/2.6.0/bin
 export PATH=/home/monepicor/repos/autoconf/bin:$PATH
-export PATH=/home/monepicor/repos/automake/bin:$PATH
+# export PATH=/home/monepicor/repos/automake/bin:$PATH
 # export AUTOCONF=autoconf2.64
 export JDK_HOME=/usr/lib/jvm/java-13-openjdk
 
@@ -127,7 +127,7 @@ alias note='nvim ~/.notes/stuff'
 export mymaingoal="Make that study program. It will change things."
 
 # Launch fish-shell
-#fish
+# exec fish
 
 # Learning (as usual)
 printf  'J delete new line

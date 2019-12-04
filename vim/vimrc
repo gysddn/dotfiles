@@ -248,7 +248,7 @@ set sidescrolloff=10					" Leave 10 characters of horizontal buffer when scrolli
 " Look & Feel ;) -------------------- {{{
 set background=dark
 " gruvbox updated, and it's sick
-colorscheme gruvbox
+colorscheme gruvbox-material
 " set termguicolors
 
 " Airline theme
@@ -276,8 +276,8 @@ augroup END
 
 " Push yourself to learn -------------------- {{{
 " Disable h,l and use w,e,b,g_,0,$,^ instead
-nnoremap h <nop>
-nnoremap l <nop>
+" nnoremap h <nop>
+" nnoremap l <nop>
 " }}}
 
 " Syntastic Settings -------------------- {{{
