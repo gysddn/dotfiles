@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+echo $TERM >> ~/mylog
+# Start tmux
+[[ $TERM != 'screen' ]] && [[ "$(ps --pid $PPID -o command --no-headers)" != 'nvim' ]] && exec tmux
+
 # Turn on extended globbing
 shopt -s extglob
 # set -o vi
