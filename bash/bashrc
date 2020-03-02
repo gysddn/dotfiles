@@ -1,13 +1,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-echo $TERM >> ~/mylog
-# Start tmux
-[[ $TERM != 'screen' ]] && [[ "$(ps --pid $PPID -o command --no-headers)" != 'nvim' ]] && exec tmux
-
 # Turn on extended globbing
 shopt -s extglob
 # set -o vi
+
+# Let other users to run graphical applications under
+# this user's session
+xhost + > /dev/null 2>&1
 
 # Paths
 #export PATH=~/kde/src/kdesrc-build:$PATH
@@ -15,7 +15,7 @@ export PATH=~/.local/bin:$PATH
 export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/monepicor/.gem/ruby/2.6.0/bin
-export PATH=/home/monepicor/repos/autoconf/bin:$PATH
+# export PATH=/home/monepicor/repos/autoconf/bin:$PATH
 # export PATH=/home/monepicor/repos/automake/bin:$PATH
 # export AUTOCONF=autoconf2.64
 export JDK_HOME=/usr/lib/jvm/java-13-openjdk
@@ -34,13 +34,13 @@ NORMAL=$'\[\033[0m\]'
 # Colored man pages
 man() {
     env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    LESS_TERMCAP_mb="$(printf '\e[1;31m')" \
+    LESS_TERMCAP_md="$(printf '\e[1;31m')" \
+    LESS_TERMCAP_me="$(printf '\e[0m')" \
+    LESS_TERMCAP_se="$(printf '\e[0m')" \
+    LESS_TERMCAP_so="$(printf '\e[1;44;33m')" \
+    LESS_TERMCAP_ue="$(printf '\e[0m')" \
+    LESS_TERMCAP_us="$(printf '\e[1;32m')" \
     man "$@"
 }
 
@@ -130,6 +130,11 @@ alias note='nvim ~/.notes/stuff'
 # define my main goal
 export mymaingoal="Make that study program. It will change things."
 
+# Lua package.path variable
+LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua"
+export LUA_PATH
+export LFS=/mnt/lfs
+
 # Launch fish-shell
 # exec fish
 
@@ -140,15 +145,11 @@ ZZ write and exit
 :<C-D> show all possible commands
 Use counts!' | catsay | lolcat
 
+############### Functions 
 
-export LFS=/mnt/lfs
 function mv2down {
   mv ~/İndirilenler/* ~/Downloads/
 }
-
-# Lua package.path variable
-LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua"
-export LUA_PATH
 
 function gunc
 {
@@ -158,13 +159,19 @@ function gunc
 function fancy() {
   while true
   do
-    figlet $1 | lolcat
+    figlet "$1" | lolcat
     sleep 1
   done
 }
 
 function startos {
-  qemu-system-x86_64 --enable-kvm -m 1024 -hdb $1 $2
+  # Start the os with ssh to 10022
+  qemu-system-x86_64 \
+  --enable-kvm \
+  -m 2G \
+  -hda "$1" \
+  -net user,hostfwd=tcp::10022-:22 -net nic \
+  "$2"
 }
 
 function push {
@@ -180,6 +187,22 @@ function pushdot {
 }
 
 function youtube-pl {
-  youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" $1
+  youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" "$1"
 }
 mnx='qemu-system-x86_64 -localtime -net user -net nic -m 256 -cdrom minix.iso -hda minix.img -boot d'
+
+
+function usage() {
+  if "$1" --help > /dev/null 2>&1; then
+    "$1" --help | grep -- "$2"
+  elif "$1" -h > /dev/null 2>&1; then
+    "$1" -h | grep -- "$2"
+  else
+    echo "Not compatible."
+  fi
+}
+
+play_lol() {
+   WINEPREFIX=~/Games-Wine/LoL WINEARCH=win32 /opt/wine-lol/bin/wine /mnt/personal_files/Games/League\ of\ Legends/Riot\ Games/League\ of\ Legends/LeagueClient.exe
+}
+

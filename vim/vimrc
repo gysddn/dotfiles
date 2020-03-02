@@ -31,6 +31,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'romainl/flattened'
 Plug 'BarretRen/vim-colorscheme'
 Plug 'Rigellute/rigel'
+Plug 'danishprakash/vim-yami'
 
 " Jedi-vim (not that useful actually)
 "Plug 'davidhalter/jedi-vim'
@@ -54,6 +55,9 @@ Plug 'vim-scripts/tComment'
 
 " Arduino syntax
 Plug 'sudar/vim-arduino-syntax'
+
+" Improved highlighting for python
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Note plugin
 Plug 'xolox/vim-notes'
@@ -112,6 +116,9 @@ Plug 'tpope/vim-eunuch'
 
 " Vim Clap
 Plug 'liuchengxu/vim-clap'
+
+" Yet another theme
+Plug 'arzg/vim-colors-xcode'
 
 " Tables, yaaay
 Plug 'dhruvasagar/vim-table-mode'
@@ -220,8 +227,8 @@ set conceallevel=0    " doesn't work properly at the time
 let g:tex_conceal='abdmg'
 
 " Python interpreters
-let g:python_host_prog  = '/usr/bin/python2.7'	  " Python 2
-let g:python3_host_prog = '/usr/bin/python3.7'  " Python 3
+let g:python_host_prog  = '/usr/bin/python2'	  " Python 2
+let g:python3_host_prog = '/usr/bin/python3'  " Python 3
 " to disable
 "let g:loaded_python_provider = 1
 "let g:loaded_python3_provider = 1
