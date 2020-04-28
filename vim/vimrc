@@ -117,6 +117,9 @@ Plug 'tpope/vim-eunuch'
 " Vim Clap
 Plug 'liuchengxu/vim-clap'
 
+" Corona Tracker
+Plug 'mattn/vim-corona-stats'
+
 " Yet another theme
 Plug 'arzg/vim-colors-xcode'
 
