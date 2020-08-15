@@ -98,12 +98,13 @@ export TERMINAL
 # personal aliases
 alias ttr='ranger ~/Lectures'
 
+export VIM_CMD='nvim'
 # use nvim
 if hash nvim 2>/dev/null; then
-	alias vim='nvim'
-	alias vi='nvim'
+	alias vim=$VIM_CMD
+	alias vi=$VIM_CMD
 else
-	alias vi='vim'
+	alias vi='vim -u /dev/null'
 fi
 
 # markdown to html5
