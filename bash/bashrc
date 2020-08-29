@@ -97,6 +97,7 @@ export TERMINAL
 
 # personal aliases
 alias ttr='ranger ~/Lectures'
+alias dev='source dev.sh'
 
 export VIM_CMD='nvim'
 # use nvim
@@ -134,8 +135,11 @@ export mymaingoal="Make that study program. It will change things."
 # Lua package.path variable
 #LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua"
 #export LUA_PATH
-export LUA_PATH='/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/home/monepicor/.luarocks/share/lua/5.3/?.lua;/home/monepicor/.luarocks/share/lua/5.3/?/init.lua'
-export LUA_CPATH='/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so;/home/monepicor/.luarocks/lib/lua/5.3/?.so'
+export LUA_PATH_5_4='/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/home/monepicor/.luarocks/share/lua/5.3/?.lua;/home/monepicor/.luarocks/share/lua/5.3/?/init.lua'
+export LUA_CPATH_5_4='/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so;/home/monepicor/.luarocks/lib/lua/5.3/?.so'
+
+export LUA_PATH='/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua;/usr/lib/lua/5.1/?.lua;/usr/lib/lua/5.1/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/home/monepicor/.luarocks/share/lua/5.1/?.lua;/home/monepicor/.luarocks/share/lua/5.1/?/init.lua'
+export LUA_CPATH='/usr/lib/lua/5.1/?.so;/usr/lib/lua/5.1/loadall.so;./?.so;/home/monepicor/.luarocks/lib/lua/5.1/?.so'
 
 export LUA_PATH_5_2='/usr/share/lua/5.2/?.lua;/usr/share/lua/5.2/?/init.lua;/usr/lib/lua/5.2/?.lua;/usr/lib/lua/5.2/?/init.lua;./?.lua;./?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/home/monepicor/.luarocks/share/lua/5.2/?.lua;/home/monepicor/.luarocks/share/lua/5.2/?/init.lua'
 export LUA_CPATH_5_2='/usr/lib/lua/5.2/?.so;/usr/lib/lua/5.2/loadall.so;./?.so;/home/monepicor/.luarocks/lib/lua/5.2/?.so'
