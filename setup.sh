@@ -24,8 +24,6 @@ create_link "$script_dir"/bash/bashrc "$HOME"/.bashrc
 create_link "$script_dir"/emacs.d "$HOME"/.emacs.d
 
 # Vim config
-create_link "$script_dir"/vim/vimrc "$HOME"/.vimrc
-create_link "$script_dir"/vim "$HOME"/.vim
 create_link "$script_dir"/tmux/tmux.conf "$HOME"/.tmux.conf
 create_link "$script_dir"/nvim "$HOME"/.config/nvim
 

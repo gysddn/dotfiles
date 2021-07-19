@@ -1,28 +1,28 @@
 "---------> Plugings
 call plug#begin("$DOT_DIR/local/nvim/plugins")
 
-Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/edge'
-Plug 'pineapplegiant/spaceduck',  { 'branch': 'main' }
+" Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/edge'
+" Plug 'pineapplegiant/spaceduck',  { 'branch': 'main' }
 
 " Auto completion
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'dhruvasagar/vim-table-mode'
+" Plug 'dhruvasagar/vim-table-mode'
 
 " Show git statuf of lines
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 "Plug 'wellle/context.vim'
 
 " Commenting quick
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
 
 " Better syntax highlight
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " surround a block with (, {, [ etc.
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 "Plug 'norcalli/typeracer.nvim'
 "Plug 'nvim-treesitter/nvim-treesitter'
@@ -33,12 +33,12 @@ Plug 'tpope/vim-surround'
 "Plug 'Shougo/defx.nvim', {'do': 'UpdateRemotePlugins'}
 
 " Let's stick with NERDTree 'til telescope comes out
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 call plug#end()
 
 "---------> Commands to set things
-colorscheme edge
+colorscheme gruvbox-material
 
 "---------> Sets
 set termguicolors
