@@ -31,4 +31,4 @@ create_link "$script_dir"/nvim "$HOME"/.config/nvim
 create_link $script_dir/xorg/Xmodmap $HOME/.Xmodmap
 
 # Install vim plugins
-vim +PlugInstall +qall
+# vim +PlugInstall +qall

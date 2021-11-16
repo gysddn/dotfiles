@@ -4,6 +4,7 @@
 # Turn on extended globbing
 shopt -s extglob
 # set -o vi
+source $HOME/.cargo/env
 
 DOT_DIR="/home/$USER/dotfiles"
 export DOT_DIR
@@ -39,6 +40,7 @@ alias ls='ls --color=auto --block-size=M'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
+alias rgrep='rgrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
@@ -87,6 +89,8 @@ export TERMINAL
 # personal aliases
 alias ttr='ranger ~/Lectures'
 
+alias s='. ../dev.sh'
+
 export VIM_CMD='nvim'
 # use nvim
 if hash nvim 2>/dev/null; then
@@ -95,6 +99,11 @@ if hash nvim 2>/dev/null; then
 else
 	alias vi='vim -u /dev/null'
 fi
+
+if type rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='rg --files'
+fi
+
 
 # markdown to html5
 alias panmd='pandoc -t html5 -f markdown+smart --toc --toc-depth 3 --template GitHub.html5 --quiet'
@@ -193,3 +202,4 @@ revmd() {
   panmd $1 -o /tmp/pandoc-md.html
   firefox /tmp/pandoc-md.html
 }
+. "$HOME/.cargo/env"
