@@ -60,9 +60,18 @@ require "paq" {
 
   {'junegunn/fzf', run = fn['fzf#install']};
   'junegunn/fzf.vim';
+
+  'rhysd/vim-llvm';
+  'kyazdani42/nvim-web-devicons';
+  'nvim-lualine/lualine.nvim';
+  'alvarosevilla95/luatab.nvim';
 }
 
 ----------------------------- OPTIONS -----------------------------
+
+vim.g.bufferline = { 
+	icons = false,
+}
 
 cmd('colorscheme melange')
 -- cmd('match Error /\\s\\+$/')
@@ -127,6 +136,12 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-l>', '<C-w>l')
 
+-- Tab navigation
+map('n', '<A-h>', ':tabprevious<CR>')
+map('n', '<A-l>', ':tabnext<CR>')
+map('n', '<A-n>', ':tabnew<CR>')
+map('n', '<A-q>', ':tabclose<CR>')
+
 -- Fuzzy Finder
 map('n', '<C-p>', ':Files<CR>')
 -- map('n', '*', '*``')
@@ -162,9 +177,9 @@ vim.g.material_style = "darker"
 require'lspconfig'.rust_analyzer.setup{
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
-require'lspconfig'.clangd.setup{
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
+-- require'lspconfig'.clangd.setup{
+--   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- }
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.lemminx.setup{
     cmd = { "/home/chilly/.local/opt/lemminx/lemminx" };
@@ -181,6 +196,8 @@ require'nvim-treesitter.configs'.setup {
 ----------------------------- PLUGIN CONF -----------------------------
 
 --require'myconfig'.treesitter_config()
+require('lualine').setup()
+require('luatab').setup{}
 
 -- Profiling
 -- cmd("profile start ~/vimprofile")

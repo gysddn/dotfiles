@@ -4,7 +4,7 @@
 # Turn on extended globbing
 shopt -s extglob
 # set -o vi
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 
 DOT_DIR="/home/$USER/dotfiles"
 export DOT_DIR
@@ -202,4 +202,16 @@ revmd() {
   panmd $1 -o /tmp/pandoc-md.html
   firefox /tmp/pandoc-md.html
 }
-. "$HOME/.cargo/env"
+
+# ascii helpers
+chr() {
+  [ "$1" -lt 256 ] || return 1
+  printf "\\$(printf '%03o' "$1")"
+}
+
+ord() {
+  LC_CTYPE=C printf '%d' "'$1"
+}
+#. "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
