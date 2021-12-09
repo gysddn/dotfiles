@@ -14,21 +14,9 @@ fi
   ln -sfv "$1" "$2"
 }
 
-# Init submodules
-# git submodule update --init --recursive
-
 # Bash config
 create_link "$script_dir"/bash/bashrc "$HOME"/.bashrc
-
-# Emacs config
-create_link "$script_dir"/emacs.d "$HOME"/.emacs.d
-
-# Vim config
+# Tmux
 create_link "$script_dir"/tmux/tmux.conf "$HOME"/.tmux.conf
+# Vim config
 create_link "$script_dir"/nvim "$HOME"/.config/nvim
-
-# Xmodmap config
-create_link $script_dir/xorg/Xmodmap $HOME/.Xmodmap
-
-# Install vim plugins
-# vim +PlugInstall +qall
