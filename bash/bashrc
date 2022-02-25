@@ -67,8 +67,8 @@ PS1="[${BGREEN}\u@\h ${BBLUE}\W${NORMAL}${BRED}${PROMPT_GIT}${NORMAL}]${PROMPT_S
 [[ -r $DIR/bash/bashrc_user ]] && . $DIR/bash/bashrc_user
 
 # HISTSIZE
-export HISTSIZE=2000
-export HISTFILESIZE=2000
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 
 # Unset temporary variables
 unset PROMPT_SIGN

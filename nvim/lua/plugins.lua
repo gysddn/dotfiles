@@ -21,7 +21,13 @@ return require('packer').startup(function()
  use 'savq/melange'
 
   --- Quck peak at registers
-  use 'junegunn/vim-peekaboo'
+  use {
+    'junegunn/vim-peekaboo',
+    disable=true
+  }
+
+  --- Readline shortcuts
+  use 'tpope/vim-rsi'
 
   --- Better table editing
   use 'dhruvasagar/vim-table-mode'

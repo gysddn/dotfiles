@@ -13,7 +13,7 @@ end
 ----------------------------- OPTIONS -----------------------------
 
 vim.g.material_style = "oceanic"
-cmd('colorscheme material')
+cmd('colorscheme melange')
 
 local indent = 2
 --- Indentation
@@ -29,7 +29,7 @@ vim.opt.list = true
 vim.opt.expandtab = true
 --- Line numbers and relative position
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 --- Hold undo tree between sessions
 vim.opt.undofile = true
 --- Don't wrap lines
