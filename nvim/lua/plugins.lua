@@ -60,15 +60,17 @@ return require('packer').startup(function()
     -- config = function() print("sdlkgj") end
   }
 
+
  --- LSP
  use {
    'neovim/nvim-lspconfig',
    config = function() 
      require'lspconfig'.tsserver.setup{
-       capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+       capabilities = require('cmp_nvim_lsp').default_capabilities()
      }
      require'lspconfig'.clangd.setup{
-       capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+       capabilities = require('cmp_nvim_lsp').default_capabilities()
+
      }
      -- require'lspconfig'.cmake.setup{
      --   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -118,11 +120,14 @@ return require('packer').startup(function()
     end
   }
 
-  --- Fuzzy finder/picker
+  --- Telescope
   use {
-    'junegunn/fzf',
-    requires = 'junegunn/fzf.vim',
-    run = vim.fn['fzf#install'],
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+    }
   }
 
   --- LLVM syntax support

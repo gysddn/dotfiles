@@ -89,8 +89,8 @@ map('n', '<A-n>', ':tabnew<CR>')
 map('n', '<A-q>', ':tabclose<CR>')
 
 --- Fuzzy Finder
-map('n', '<C-p>', ':Files<CR>')
-map('n', '?', ':Lines<CR>')
+map('n', '<C-p>', ':Telescope find_files<CR>')
+map('n', '?', ':Telescope live_grep<CR>')
 --- Search and highlight but don't jump
 -- map('n', '*', '*``')
 
